@@ -1,0 +1,21 @@
+{
+  "interactions": [
+    {
+      "state": "a record for an alligator named Mary exists",
+      "query": "select * from alligators where name = 'Mary' limit 1",
+      "results": [
+        {
+          "name": "Mary",
+          "age": 2
+        }
+      ]
+    },
+    {
+      "state": "a record for an alligator named Mary does not exist",
+      "query": "select * from alligators where name = 'Mary' limit 1",
+      "results": [
+
+      ]
+    }
+  ]
+}
