@@ -5,13 +5,13 @@ This repository demonstrates how to roll your own contract using the concepts of
 The key steps in performing consumer driven contract testing are:
 
 1. Consumer specs are run using a mock provider. The interactions (inputs and expected outputs) are serialized in a contract file.
-1. The contract file is used to replay the recorded calls against the provider, and to check that the actual outputs match the expected outputs. If they do, then we have proven that the real provider behaves the same way as the mock provider, and hence, the two applications should work together correctly in real life.
+1. The contract file is used to replay the recorded calls against the provider, and to check that the actual outputs match the expected outputs. If they do, then we have proven that the real provider behaves the same way as the mock provider, and hence, the consumer and provider should work together correctly in real life.
 
 The key to setting up a new contract to work out where in the call chain between the consumer and provider you can insert a mock that accepts arguments and returns a response that can be serialized to a file.
 
 This example codebase demonstrates a contract between a `Zoo database client` and a `Zoo database`. The purpose of the `Zoo database client` is to retrieve an `Alligator` from the database. We show how the client and database respond in the scenario where the desired record is found, and when it is not found.
 
-The provider object that will be mocked in this example is an instance of a `Sequel` database. The argument that the mock and real provider accept is a query string, and the results returned by both is an array of hashes.
+The provider object that will be mocked in this example is an instance of a `Sequel` database. The argument that the mock and real provider accept is a query string, and the result returned by both is an array of hashes.
 
 The purpose of the consumer specs (where the contract is written) is to demonstrate that the client is making the correct query to the provider, and that it can correctly handle the expected results.
 
